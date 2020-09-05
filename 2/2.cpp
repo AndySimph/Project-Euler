@@ -1,32 +1,50 @@
 //Programmer: Andy Simphaly
 
-//Librares
+//Libraries
 #include <iostream>
 #include <math.h>
 using namespace std;
 
+//Global Variable for Binet's Formula
+const float SQRT_FIVE = pow(5, .5);
+const float PHI = (1 + SQRT_FIVE) / 2;
+const int LIMIT = 4000000;
+
+//Description:
+//Precondition:
+//Postcondition:
+int evenfib(int n);
+
+
 int main(){
 
   //Variables
-  const int x = 3;
-  const int y = 5;
-  int x_sum = 0;
-  int y_sum = 0;
+  int sum = 0;
+  int i = 2;
 
-  //For loop to iterate through natural numbers below 1000
-  for (int i = 1; i < 1000; i++) {
-    //Check if integer is a multiple of 3, not including multiples of 5
-    if (i % x == 0 && i % y != 0) {
-      x_sum += i;
-    }
-    //Checks if integer is multiple of 5
-    if (i % y == 0) {
-      y_sum += i;
-    }
-  }
+  //Function call
+  // do {
+  //   cout << sum << endl;
+  //   sum += evenfib(i);
+  //   i++;
+  // } while (evenfib(i-1) <= LIMIT);
 
   //Output the sum
-  cout << x_sum + y_sum << endl;
+  int temp = floor(log(LIMIT * SQRT_FIVE) / log(PHI));
+  int n = floor(temp / 3);
+  int ans = ((pow(PHI, (3 * n + 3)) - 1) / (pow(PHI , 3) - 1)
+    - (pow((1 - PHI), (3 * n + 3)) - 1) / (pow((1 - PHI) , 3) - 1)) / SQRT_FIVE;
+  cout << temp << " " << n << " " << ans << endl;
+  cout << sum << endl;
 
   return 0;
 };
+
+//Function for finding even fibonacci values
+int evenfib(int n) {
+  int num = (1/SQRT_FIVE) * (pow(PHI, n) - pow( - pow(PHI, -1), n));
+  if (num % 2 == 0) {
+    return num;
+  }
+  return 0;
+}
