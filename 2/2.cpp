@@ -33,7 +33,7 @@ int evenfibsum(int lim) {
   int temp = floor(log(lim * SQRT_FIVE) / log(PHI));
   int n = floor(temp / 3);
 
-  //Using sumnation to solve
+  //Using summation to solve
   int ans = ((pow(PHI, (3 * n + 3)) - 1) / (pow(PHI , 3) - 1)
     - (pow((-1 / PHI), (3 * n + 3)) - 1) / (pow((-1 / PHI) , 3) - 1)) / SQRT_FIVE;
 
