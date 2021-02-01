@@ -2,6 +2,7 @@
 
 //Libraries
 #include <iostream>
+#include <cmath>
 
 //Function to determine if a number is prime
 bool is_prime(int num) {
@@ -27,24 +28,34 @@ bool is_prime(int num) {
     return isPrime;
 }
 
+// long long is_prime(long long n)
+// {
+// 	//returns 0 if not prime, 1 if prime
+// 	if (n % 2 == 0)
+// 		return 0;
+// 	for (long long i = 3; i <= (pow(n,0.5)); i += 2)
+// 	{
+// 		if (n % i == 0)
+// 			return 0;
+// 	}
+// 	return 1;
+// }
 
 int main () {
 
     //Variable
-    int sum = 0;
+    unsigned long long sum = 0;
 
     //Loop to iterate through all numbers up to 2 million
     for (int i = 2; i < 2000000; i++) {
 
         //Check if the number is a prime and if it is then add it to the sum
         if (is_prime(i)) {
-            if (sum >= 0) {
-                sum = sum + i;
+            sum = sum + i;
 
-            }
-
-            std::cout << sum << std::endl;
         }
+
+    std::cout << i << std::endl;
 
     }
 
