@@ -38,8 +38,14 @@ int main () {
 
         //Check if the number is a prime and if it is then add it to the sum
         if (is_prime(i)) {
-            sum += i;
+            if (sum >= 0) {
+                sum = sum + i;
+
+            }
+
+            std::cout << sum << std::endl;
         }
+
     }
 
     //Output
