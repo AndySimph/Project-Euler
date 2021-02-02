@@ -28,19 +28,6 @@ bool is_prime(int num) {
     return isPrime;
 }
 
-// long long is_prime(long long n)
-// {
-// 	//returns 0 if not prime, 1 if prime
-// 	if (n % 2 == 0)
-// 		return 0;
-// 	for (long long i = 3; i <= (pow(n,0.5)); i += 2)
-// 	{
-// 		if (n % i == 0)
-// 			return 0;
-// 	}
-// 	return 1;
-// }
-
 int main () {
 
     //Variable
