@@ -3,14 +3,16 @@
 //Libraries
 #include <iostream>
 #include <cmath>
+#include <vector>
 
 int main() {
 
     //Variables
     bool quit = false;
-    int triangle = 0;
+    int triangle = 1;
     long sum;
     int num_factors;
+    std::vector<int> factors;
 
     //Loop to continue until told to stop
     while (!(quit)) {
@@ -24,17 +26,35 @@ int main() {
             sum += i;
         }
 
-        //Increment the triangle
-        triangle++;
+        //Get the factors of the sum and push it into the factors vector
+        for (int i = 1; i <= sum; i++) {
+            if (sum % i == 0) {
+                factors.push_back(i);
+            }
+        }
 
-        //If statement to quit the loop
-        if (triangle == 5) {
+
+        std::cout << triangle << std::endl;
+
+        //Output the triangle and factors
+        if (factors.size() == 500) {
+            std::cout << triangle << std::endl;
+            std::cout << sum << std::endl;
+            for (int i = 0; i < factors.size(); i++) {
+                std::cout << factors[i] << " ";
+            }
+            std::cout << std::endl << std::endl;
+
+            //End the loop if the factor size is 500
             quit = true;
         }
-    }
 
-    //Output
-    std::cout << triangle << std::endl;
+        //Clear elements of the vector
+        factors.clear();
+
+        //Increment the triangle
+        triangle++;
+    }
 
     return 0;
 }
