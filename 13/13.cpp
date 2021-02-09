@@ -8,18 +8,27 @@
 int main () {
     std::string line;
     std::ifstream myfile("numbers.txt");
-    long long value;
+    long long value = 0;
+    std::string temp_val = "";
 
     if (myfile) {
         while (std::getline(myfile, line)) {
 
-            value = std::stoi(line);
+            temp_val = "";
 
-            std::cout << value << std:: endl;
+            for (int i = 0; i < 11; i++) {
+                temp_val += line[i];
+            }
+            
+            value += std::stol(temp_val);
         
         }
         myfile.close();
     }
+
+    value = value / 1000;
+
+    std::cout << value << std:: endl;
 
     return 0;
 }
