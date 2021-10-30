@@ -20,7 +20,22 @@ int main () {
         ++length;
     }
 
+    temp_var = result;
+
+    int array [length];
+
+    for (int i = 0; i < length; i++) {
+
+        array[i] = temp_var % 10;
+        temp_var = temp_var / 10;
+
+    }
+
     std::cout << result << " " << length << std::endl;
+
+    for (int i = 0; i < length; i++) {
+        std::cout << array[i] << std::endl;
+    }
 
     return 0;
 }
