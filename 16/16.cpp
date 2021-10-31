@@ -8,7 +8,7 @@
 int main () {
     //Variables
     int base = 2;
-    int power = 15;
+    int power = 1000;
     int result = pow(base, power);
 
     int length = 0;
@@ -31,11 +31,14 @@ int main () {
 
     }
 
-    std::cout << result << " " << length << std::endl;
+    int sum = 0;
 
     for (int i = 0; i < length; i++) {
-        std::cout << array[i] << std::endl;
+        sum += array[i];
     }
 
+    std::cout << sum << std::endl;
+
+    
     return 0;
 }
