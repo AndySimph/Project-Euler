@@ -36,8 +36,13 @@ std::string unique_num(int num) {
 
 int main () {
 
+    int num_char;
+
     for (int i = 0; i < 15; i++) {
         std::cout << unique_num(i) << ", ";
+        for(int j = 0; j < unique_num(i).length(); j++) {
+            num_char += 1;
+        }
     } 
     std::cout << std::endl;
 
