@@ -6,6 +6,7 @@
 #include <tgmath.h>
 #include <string>
 
+//Function to return unique numbers
 std::string unique_num(int num) {
 
     switch(num) {
@@ -32,21 +33,27 @@ std::string unique_num(int num) {
         default: break;
     }
 
-};
+    return "Error";
+}
 
+//Main function
 int main () {
+    //Variable
+    int num_char = 0;
 
-    int num_char;
-
+    //Loop through each number
     for (int i = 0; i < 15; i++) {
         std::cout << unique_num(i) << ", ";
-        for(int j = 0; j < unique_num(i).length(); j++) {
-            num_char += 1;
-        }
+        std::cout << unique_num(i).length() << std::endl;
+        num_char += unique_num(i).length();
+        std::cout << num_char << std::endl;
     } 
+
     std::cout << std::endl;
 
+    std::cout << num_char << std::endl;
+
     return 0;
-};
+}
 
 
