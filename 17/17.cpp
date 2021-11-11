@@ -43,14 +43,18 @@ int main () {
 
     //Loop through each number
     for (int i = 0; i < 15; i++) {
+        //Output
         std::cout << unique_num(i) << ", ";
         std::cout << unique_num(i).length() << std::endl;
+
+        //Count the number of characters and add it
         num_char += unique_num(i).length();
         std::cout << num_char << std::endl;
     } 
 
     std::cout << std::endl;
 
+    //Output
     std::cout << num_char << std::endl;
 
     return 0;
