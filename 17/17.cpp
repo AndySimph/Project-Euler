@@ -40,22 +40,23 @@ std::string unique_num(int num) {
 int main () {
     //Variable
     int num_char = 0;
+    int ctr;
 
     //Loop through each number
-    for (int i = 0; i < 15; i++) {
+    for (ctr = 0; ctr < 15; ctr++) {
         //Output
-        std::cout << unique_num(i) << ", ";
-        std::cout << unique_num(i).length() << std::endl;
+        std::cout << unique_num(ctr) << ", ";
+        std::cout << unique_num(ctr).length() << std::endl;
 
         //Count the number of characters and add it
-        num_char += unique_num(i).length();
+        num_char += unique_num(ctr).length();
         std::cout << num_char << std::endl;
     } 
 
     std::cout << std::endl;
 
     //Output
-    std::cout << num_char << std::endl;
+    std::cout << num_char << " " << ctr << std::endl;
 
     return 0;
 }
