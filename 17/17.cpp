@@ -2,8 +2,6 @@
 
 //Libraries
 #include <iostream>
-#include <vector>
-#include <tgmath.h>
 #include <string>
 
 //Function to return unique numbers
